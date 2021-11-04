@@ -121,8 +121,8 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="@+id/leaf_textView"
                 app:layout_constraintStart_toStartOf="@+id/leaf_textView"
-                app:srcCompat="@drawable/ic_leaf"
-                tools:layout_editor_absoluteY="120dp" />
+                app:layout_constraintTop_toTopOf="@+id/clock_imageView"
+                app:srcCompat="@drawable/ic_leaf" />
 
             <TextView
                 android:id="@+id/leaf_textView"
