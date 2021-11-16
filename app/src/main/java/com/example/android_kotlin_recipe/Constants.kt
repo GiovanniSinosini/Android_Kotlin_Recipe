@@ -1,6 +1,6 @@
 package com.example.android_kotlin_recipe
 
-class Constrants {
+class Constants {
 
     companion object{
 
