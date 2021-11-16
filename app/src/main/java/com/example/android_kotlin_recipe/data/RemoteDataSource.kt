@@ -1,5 +1,6 @@
-package com.example.android_kotlin_recipe
+package com.example.android_kotlin_recipe.data
 
+import com.example.android_kotlin_recipe.data.network.FoodRecipesApi
 import com.example.android_kotlin_recipe.models.FoodRecipe
 import retrofit2.Response
 import javax.inject.Inject

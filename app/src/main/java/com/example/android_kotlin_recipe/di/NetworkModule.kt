@@ -1,7 +1,7 @@
 package com.example.android_kotlin_recipe.di
 
-import com.example.android_kotlin_recipe.Constants.Companion.BASE_URL
-import com.example.android_kotlin_recipe.FoodRecipesApi
+import com.example.android_kotlin_recipe.util.Constants.Companion.BASE_URL
+import com.example.android_kotlin_recipe.data.network.FoodRecipesApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -46,7 +46,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideApiService(retrofit: Retrofit): FoodRecipesApi{
+    fun provideApiService(retrofit: Retrofit): FoodRecipesApi {
         return retrofit.create(FoodRecipesApi::class.java)
     }
 }

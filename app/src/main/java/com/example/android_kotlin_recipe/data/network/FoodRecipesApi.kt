@@ -1,4 +1,4 @@
-package com.example.android_kotlin_recipe
+package com.example.android_kotlin_recipe.data.network
 
 import com.example.android_kotlin_recipe.models.FoodRecipe
 import retrofit2.Response

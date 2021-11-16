@@ -1,4 +1,4 @@
-package com.example.android_kotlin_recipe
+package com.example.android_kotlin_recipe.util
 
 class Constants {
 
