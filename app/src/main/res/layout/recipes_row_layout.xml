@@ -6,7 +6,7 @@
     <data>
         <variable
             name="result"
-            type="com.example.android_kotlin_recipe.models.Result" />
+            type="com.example.foody.models.Result" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -29,7 +29,6 @@
             app:strokeColor="@color/lightMediumGray"
             app:strokeWidth="1dp">
 
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -39,6 +38,7 @@
                     android:id="@+id/recipe_imageView"
                     android:layout_width="200dp"
                     android:layout_height="0dp"
+                    loadImageFromUrl="@{result.image}"
                     android:scaleType="centerCrop"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -120,8 +120,8 @@
                     android:layout_marginStart="24dp"
                     android:text="100"
                     setNumberOfMinutes="@{result.readyInMinutes}"
-                    android:textColor="@color/yellow"
                     android:textAlignment="center"
+                    android:textColor="@color/yellow"
                     app:layout_constraintStart_toEndOf="@+id/heart_textView"
                     app:layout_constraintTop_toBottomOf="@+id/clock_imageView" />
 
@@ -145,8 +145,8 @@
                     android:textAlignment="center"
                     app:layout_constraintStart_toEndOf="@+id/clock_textView"
                     app:layout_constraintTop_toBottomOf="@+id/leaf_imageView" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.card.MaterialCardView>
 
