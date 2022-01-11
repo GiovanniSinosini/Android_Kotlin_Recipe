@@ -1,5 +1,6 @@
 package com.example.foody.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,8 +12,9 @@ import com.example.foody.models.ExtendedIngredient
 import com.example.foody.util.Constants.Companion.BASE_IMAGE_URL
 import com.example.foody.util.RecipesDiffUtil
 import kotlinx.android.synthetic.main.ingredients_row_layout.view.*
+import java.util.*
 
-class IngredientsAdapter : RecyclerView.Adapter<IngredientsAdapter.MyViewHolder>() {
+class IngredientsAdapter: RecyclerView.Adapter<IngredientsAdapter.MyViewHolder>() {
 
     private var ingredientsList = emptyList<ExtendedIngredient>()
 
@@ -23,8 +25,12 @@ class IngredientsAdapter : RecyclerView.Adapter<IngredientsAdapter.MyViewHolder>
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.itemView.ingredient_imageView.load(BASE_IMAGE_URL + ingredientsList[position].image)
-        holder.itemView.ingredient_name.text = ingredientsList[position].name.capitalize()
+        holder.itemView.ingredient_imageView.load(BASE_IMAGE_URL + ingredientsList[position].image) {
+            Log.d("image", BASE_IMAGE_URL + ingredientsList[position].image)
+            crossfade(600)
+            error(R.drawable.ic_error_placeholder)
+        }
+        holder.itemView.ingredient_name.text = ingredientsList[position].name.capitalize(Locale.ROOT)
         holder.itemView.ingredient_amount.text = ingredientsList[position].amount.toString()
         holder.itemView.ingredient_unit.text = ingredientsList[position].unit
         holder.itemView.ingredient_consistency.text = ingredientsList[position].consistency
@@ -35,11 +41,12 @@ class IngredientsAdapter : RecyclerView.Adapter<IngredientsAdapter.MyViewHolder>
         return ingredientsList.size
     }
 
-    fun setData(newIngredients: List<ExtendedIngredient>){
+    fun setData(newIngredients: List<ExtendedIngredient>) {
         val ingredientsDiffUtil =
             RecipesDiffUtil(ingredientsList, newIngredients)
         val diffUtilResult = DiffUtil.calculateDiff(ingredientsDiffUtil)
         ingredientsList = newIngredients
         diffUtilResult.dispatchUpdatesTo(this)
     }
+
 }

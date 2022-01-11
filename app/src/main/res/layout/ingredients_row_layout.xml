@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     android:padding="4dp">
 
-
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/ingredients_cardView"
         android:layout_width="match_parent"
@@ -19,14 +18,13 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-        
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/ingredient_background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:elevation="2dp"
             android:background="@color/cardBackgroundColor">
-
 
             <View
                 android:id="@+id/white_background"
@@ -40,11 +38,10 @@
                 android:id="@+id/ingredient_imageView"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                app:layout_constraintStart_toStartOf="@id/white_background"
-                app:layout_constraintEnd_toEndOf="@id/white_background"
-                app:layout_constraintTop_toTopOf="@id/white_background"
-                app:layout_constraintBottom_toBottomOf="@id/white_background"
-
+                app:layout_constraintStart_toStartOf="@+id/white_background"
+                app:layout_constraintEnd_toEndOf="@+id/white_background"
+                app:layout_constraintTop_toTopOf="@+id/white_background"
+                app:layout_constraintBottom_toBottomOf="@+id/white_background"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
@@ -106,8 +103,8 @@
                 app:layout_constraintStart_toStartOf="@+id/ingredient_consistency"
                 app:layout_constraintTop_toBottomOf="@+id/ingredient_consistency"
                 app:layout_constraintVertical_bias="0.0" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
 
