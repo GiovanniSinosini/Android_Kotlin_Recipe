@@ -48,11 +48,10 @@ class DetailsActivity : AppCompatActivity() {
 
         viewPager.adapter = adapter
         tabLayout.setupWithViewPager(viewPager)
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == android.R.id.home){
+        if (item.itemId == android.R.id.home) {
             finish()
         }
         return super.onOptionsItemSelected(item)
